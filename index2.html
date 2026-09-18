@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Viagem</title>
+   
+</head>
+<body>
+    <script src="script.js"></script>
+    <h1 id="titulo">Painel de Viagem</h1>
+
+    <input id="cidade" type="text" placeholder="Digite uma cidade">
+    <button onclick="mostrarCidade()">Mostrar cidade</button>
+
+    <p id="mensagem"></p>
+
+    <button onclick="mudarCor()">Destacar mensagem</button>
+
+    <h2>Contador</h2>
+    <button onclick="diminuir()">-</button>
+    <span id="contador">10</span>
+    <button onclick="aumentar()">+</button>
+
+    <script>
+        let valor = 10;
+
+        function mostrarCidade() {
+            let cidade = document.getElementById('cidade').value;
+            document.getElementById('mensagem').textContent = 'Você escolheu conhecer ' + cidade + '!';
+        }
+
+        function mudarCor() {
+            let mensagem = document.getElementById('mensagem');
+            mensagem.style.color = 'blue';
+        
+        }
+
+        function aumentar() {
+            valor++;
+            document.getElementById('contador').textContent = valor;
+        }
+
+        function diminuir() {
+            valor--;
+            document.getElementById('contador').textContent = valor;
+        }
+    </script>
+</body>
+</html>

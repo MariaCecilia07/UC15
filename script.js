@@ -1,94 +1,132 @@
-console.log("Olá, Cecília! Seja bem-vinda!")
-console.log("Olá,Gaby! Seja bem-vinda!")
-console.log("Olá, Fernanda! Seja bem-vinda!")
+let tarefas = [];
 
-function darBoasVindas (nome) {
-    console.log(`Olá, ${nome}! Seja Bem-Vindo!`)
+let totalTarefas = 0;
+let totalConcluidas = 0;
+
+
+function adicionarTarefa() {
+    let nome = document.getElementById("tarefa").value.trim();
+
+    let materia = document.getElementById("materia").value.trim();
+
+    let prioridade = document.getElementById("prioridade").value;
+
+    let mensagem = document.getElementById("mensagem");
+
+    if(nome === "" || materia === "" || prioridade ==="") {
+        mensagem.textContent = "Preencha todos os campos!";
+
+        mensagem.style.color = "blue";
+
+        return:
+    }
+
+    if (duplicado) {
+        mensagem.textContent = "Essa tarefa já foi cadastrada"
+        mensagem. style.color = "blue"
+        return;
+    }
+
+    let novaTarefa = {
+        nome: nome,
+        materia: materia,
+        prioridade: prioridade,
+        concluida: false
+    };
+
+    tarefas.push(novaTarefa);
+    totalTarefas++;
+    mensagem.textContent = "Tarefa cadastrada com sucesso!"
+    mensagem.style.color = "grey"
+
+    ataualizarContadores();
+    exibirTarefas();
+    limparCampos();
 }
 
-darBoasVindas("Cecília")
-darBoasVindas("Gaby")
-darBoasVindas("Fernanda")
+function exibirTarefas () {
+     let lista = document.getElementById
+     lista.textContent = "";
 
-function apresentar(nome,  idade){
-    console.log(`Meu nome é ${nome} e tenho ${idade} anos.`);
+     tarefas.forEach(function(tarefa,indice) {
+        let card = document.createElement("div")
+        card.className = "tarefa";
+
+        let titulo = document.createElement ("h3")
+
+        let status = document.createElement("p")
+
+        status.textContent = tarefa.concluida
+        ? "Status:Concluída"
+        : "Status: Pendente";
+
+        card.appendChild(titulo);
+        card.appendChild(materia);
+        card.appendChild(prioridade);
+        card.appendChild(status);
+
+        destacarPrioridade( card, tarefa.prioridade);
+
+        if (tarefa.concluida) {
+            card.classList.add("concluida");
+        } else{
+            let botao = document.createElement ("button");
+            botao.textContent = "Concluir tarefa";
+
+            botao.onclick = function () {
+                concluirTarefa(indice);
+            };
+            card.appendChild(botao);
+            card.
+        }
+     }
+    );
 }
 
-apresentar("Cecília", 15)
-apresentar("Gaby", 23)
-apresentar("Fernanda", 16)
-
-function estudando(nome){
-    console.log(`${nome} está estudando!`)
-    console.log(`${nome} Não está estudando!`)
+function destacarPrioridade(card, prioridade) {
+    if (prioridade === "Alta") {
+        card.style.borderLeft = "5px solid red";
+    } else if (prioridade === "Média") {
+        card.style.borderLeft = "5px solid orange";
+    } else if (prioridade === "Baixa") {
+        card.style.borderLeft = "5px solid blue";
+    }
 }
 
-estudando("Cecília")
-estudando("Gaby")
-estudando("Fernanda")
+function concluirTarefa(indice) {
+    let tarefa = tarefas[indice];
+    if (tarefa.concluida) {
+        return;
+    }
 
-function somar(a,b){
-    return a + b}
+    tarefa.concluida = true;
+    totalConcluidas++;
 
-somar(5,3)
+    let mensagem = document.getElementById("mensagem");
+    mensagem.textContent = "Tarefa concluída com sucesso!";
+    mensagem.style.color = "grey";
 
-let resultado = somar(5,3);
-
-console.log(resultado);
-
-function média(a, b, c) {
-    return (a + b + c) / 3;
+    atualizarContadores();
+    exibirTarefas();
 }
 
-let resultadoM = média(7, 6, 9);
-
-console.log(resultadoM);
-
-
-function calcularMedia(nota1, nota2) {
-    return (nota1 + nota2) / 2;
+function atualizar Contadores() {
+    document.getElementById("contador").textContent =
+    "Tarefas cadastradas:" + totalTarefas;
+    document.getElementById("contadorConcluidas").textContent =
+     "Tarefas concluídas:" + totalConcluidas;
 }
 
-let nome = prompt ("digite o nome do aluno: ")
-let nota1 = Number(prompt("digite a primeira nota: "))
-let nota2 = Number(prompt("digite a segunda nota: "))
-
-let media1 = calcularMedia(nota1, nota2);
-
-console.log(`${nome} ficou com média ${media1}`);
-
-if(media1 >= 6){
-    console.log(`${nome} está aprovado!`)}
-
-else{
-    console.log(`${nome} está reprovado!`)
+function limparCampos(){
+    document.getElementById("tarefa").value = "";
+    document.getElementById ("materia").value = "";
+    document.getElementById ("prioridade").value = "";
 }
 
-calcularMedia(nota1, nota2)
 
-function calcularViagem(passagem, hospedagem, alimentação, passeios) {
-    return passagem + hospedagem + alimentação + passeios;
+function alternarModo (){
+    document.body.classList.toggle("modo-concentracao");
 }
-
- let passagem = Number(prompt("Digite o valor da passagem: "))
- let hospedagem = Number(prompt("Digite o valor da hospedagem: "))
- let alimentação = Number(prompt("Digite o valor da alimentação: "))
- let passeios = Number(prompt("Digite o valor dos passeios: "))
-
- let total = calcularViagem(passagem, hospedagem, alimentação, passeios);
-
- console.log(`O valor total da viagem é: ${total}`)
-
- if(total <= 2000){
-    console.log("A viagem está dentro do orçamento")
- }
-
- else{
-    console.log("A viagem está fora do orçamento")
- }
- 
-
- 
 
 
 

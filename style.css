@@ -1,0 +1,234 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #f1f0ff, #e8e4fc, #c0bbf8);
+    margin: 0;
+    padding: 30px;
+    color: #2b295c;
+    min-height: 100vh;
+    transition: 0.3s;
+}
+
+
+.container {
+    max-width: 700px;
+    margin: auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(84, 24, 194, 0.12);
+    border: 1px solid #ebe4fc;
+}
+
+
+h1, h2 {
+    text-align: center;
+    color: #4b18c2;
+}
+
+
+h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+
+h2 {
+    font-size: 22px;
+    margin-top: 25px;
+}
+
+
+input, select {
+    width: 100%;
+    padding: 12px 14px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    border: 1px solid #bcb6f3;
+    border-radius: 10px;
+    background-color: #f9f8ff;
+    color: #3d295c;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s;
+}
+
+
+input:focus, select:focus {
+    border-color: #4640ec;
+    box-shadow: 0 0 0 3px rgba(90, 64, 236, 0.12);
+    background-color: #ffffff;
+}
+
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    box-sizing: border-box;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #5740ec, #1b1bd8);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(40, 27, 216, 0.18);
+    transition: 0.3s ease;
+}
+
+
+button:hover {
+    background: linear-gradient(135deg, #411bd8, #3014ad);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(52, 27, 216, 0.25);
+}
+
+
+button:active {
+    transform: scale(0.98);
+}
+
+
+#mensagem {
+    font-weight: bold;
+    text-align: center;
+    margin-top: 18px;
+    padding: 12px;
+    border-radius: 10px;
+    color: #3218c2;
+    background-color: #e8e4fc;
+}
+
+
+.contadores {
+    text-align: center;
+    margin: 25px 0;
+    padding: 15px;
+    font-weight: bold;
+    color: #3014ad;
+    background-color: #e4e4fc;
+    border-radius: 12px;
+    border: 1px solid #c6bbf8;
+}
+
+
+.tarefa {
+    background: linear-gradient(135deg, #f9f8ff, #e5e4fc);
+    padding: 18px;
+    margin-top: 18px;
+    border-radius: 12px;
+    border-left: 6px solid #4043ec;
+    box-shadow: 0 4px 12px rgba(30, 24, 194, 0.08);
+    transition: 0.3s ease;
+}
+
+
+.tarefa:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 16px rgba(194, 24, 91, 0.14);
+}
+
+
+.tarefa h3 {
+    color: #3a14ad;
+    margin-top: 0;
+}
+
+
+.tarefa button {
+    background: linear-gradient(135deg, #7762f0, #6840ec);
+    box-shadow: none;
+}
+
+
+.tarefa button:hover {
+    background: linear-gradient(135deg, #5140ec, #2918c2);
+}
+
+
+.concluida {
+    opacity: 0.7;
+    border-left-color: #535254;
+    background: #f1f8f2;
+}
+
+
+.concluida h3 {
+    text-decoration: line-through;
+    color: #888;
+}
+
+
+.modo-concentracao {
+    background: linear-gradient(135deg, #1e1b31, #20194a);
+    color: #e6e4fc;
+}
+
+
+.modo-concentracao .container {
+    background-color: #2b263d;
+    border: 1px solid #444070;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+
+.modo-concentracao h1,
+.modo-concentracao h2 {
+    color: #a78ff4;
+}
+
+
+.modo-concentracao input,
+.modo-concentracao select {
+    background-color: #373450;
+    color: #ffffff;
+    border: 1px solid #595187;
+}
+
+
+.modo-concentracao input::placeholder {
+    color: #a9a9d7;
+}
+
+
+.modo-concentracao .tarefa {
+    background: #353450;
+    border-left-color: #978ff4;
+    color: #e9e4fc;
+}
+
+
+.modo-concentracao .tarefa h3 {
+    color: #c1bbf8;
+}
+
+
+.modo-concentracao .contadores {
+    background-color: #3a3450;
+    color: #c6bbf8;
+    border-color: #595187;
+}
+
+
+.modo-concentracao #mensagem {
+    background-color: #3b3450;
+    color: #bdbbf8;
+}
+
+
+@media (max-width: 600px) {
+    body {
+        padding: 15px;
+    }
+
+
+    .container {
+        padding: 20px;
+        border-radius: 15px;
+    }
+
+
+    h1 {
+        font-size: 25px;
+    }
+}

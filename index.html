@@ -1,66 +1,133 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <script src="script.js"></script>
-    <div class="container">
-        <h1 id="titulo">Meu Planejador de Estudos</h1>
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portfólio de estudante de Desenvolvimento de Sistemas." />
+    <meta name="theme-color" content="#f5f4ef" />
+    <title>Maria Cecilia — Portfólio</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <header class="site-header" id="topo">
+      <nav class="container nav" aria-label="Navegação principal">
+        <!-- Troque SN pelas iniciais do seu nome. -->
+        <a class="brand" href="#inicio" aria-label="Maria Cecilia, início">M.<h3><span>Cecilia</span></h3></a>
 
-        <h2>Nova tarefa</h2>
-
-        <input type="text" id="tarefa" placeholder="Digite o nome da tarefa">
-
-        <input type="text" id="materia" placeholder="Digite a matéria">
-
-        <select id="prioridade">
-            <option value=""> Selecione a prioridade</option>
-            <option value="Baixa">Baixa</option>
-            <option value="Média"> Média</option>
-            <option value="Alta"> Alta</option>
-        </select>
-
-        <button onclick="adicionarTarefa()">
-            Cadastrar tarefa
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Abrir menu" title="Abrir menu">
+          <span></span>
+          <span></span>
         </button>
 
-        <button onclick="limparCampos()">
-        Limpar Campos
-        </button>
- <p id="mensagem"></p>
+        <ul class="nav-links" id="menu-principal">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#habilidades">Habilidades</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a class="nav-contact" href="#contato">Contato <span aria-hidden="true">↗</span></a></li>
+          <li><button class="theme-toggle" type="button" aria-label="Ativar tema escuro" title="Alternar tema"><span aria-hidden="true">☾</span></button></li>
+        </ul>
+      </nav>
+    </header>
 
- <div class="contadores">
-    <p id="contador"> Tarefas cadastradas: 0</p>
-    <p id="contadorConcluidas"> Tarefas concluídas: 0</p>
- </div>
+    <main id="conteudo">
+      <section class="hero container" id="inicio" aria-labelledby="titulo-principal">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span><span id="saudacao">Olá</span>, que bom ter você aqui</p>
+          <h1 id="titulo-principal">Ideias viram<br /><span class="headline-highlight">experiências.</span></h1>
+          <p class="hero-intro">Eu sou <strong>Maria Cecília</strong>, estudante de Desenvolvimento técnico. Estou aprendendo a transformar linhas de código em coisas que fazem sentido para as pessoas.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projetos">Explorar projetos <span aria-hidden="true">↓</span></a>
+            <a class="text-link" href="#sobre">Um pouco sobre mim <span aria-hidden="true">↘</span></a>
+          </div>
+          <p class="hero-location"><span aria-hidden="true">⌁</span> Natal, Brasil <span class="location-divider">/</span> Disponível para aprender</p>
+        </div>
+        <figure class="hero-art">
+          <!-- Troque img/avatar.svg por uma imagem sua. Mantenha um alt que descreva a imagem. -->
+          
+         <img src="Captura de tela 2026-10-22 172329.png" alt="foto cecilia" class="profile-img">
 
-<button onclick="alternarModo()">
-    Modo de concentração
-</button>
+        </figure>
+        <a class="scroll-note" href="#sobre"><span aria-hidden="true">↓</span> ROLE PARA CONTINUAR</a>
+      </section>
 
-<h2>Minhas Tarefas</h2>
+      <section class="section about-section" id="sobre" aria-labelledby="titulo-sobre">
+        <div class="container about-grid">
+          <div class="section-label"><p class="eyebrow">01 / QUEM SOU</p><span class="big-index" aria-hidden="true">01</span></div>
+          <div class="about-content">
+            <h2 id="titulo-sobre">Aprender é meu jeito de <span>chegar mais longe.</span></h2>
+            <div class="about-text">
+              <!-- Substitua os parágrafos por uma apresentação verdadeira sobre você. -->
+              <p>Sou estudante do curso Técnico em Desenvolvimento de Sistemas no SENAC MedTec. Minha curiosidade por tecnologia me trouxe até o desenvolvimento web — uma área onde posso unir lógica, criatividade e vontade de resolver problemas.</p>
+              <p>Neste momento estou praticando HTML, CSS e JavaScript. Quero aprender a criar experiências acessíveis, responsivas e úteis, e este portfólio é o registro da minha evolução.</p>
+            </div>
+            <a class="text-link" href="#habilidades">O que estou aprendendo <span aria-hidden="true">↘</span></a>
+          </div>
+        </div>
+      </section>
 
-<div id="listasTarefas"></div>
+      <section class="section skills-section container" id="habilidades" aria-labelledby="titulo-habilidades">
+        <div class="section-heading">
+          <div><p class="eyebrow">02 / CAIXA DE FERRAMENTAS</p><h2 id="titulo-habilidades">Aprendendo na <span>prática.</span></h2></div>
+          <p class="section-intro">Habilidades que estou desenvolvendo agora. Os níveis são parte do caminho, não uma linha de chegada.</p>
+        </div>
+        <ul class="skills-list">
+          <li class="skill-row"><span class="skill-number">01</span><h3>HTML</h3><span class="skill-level">Praticando</span><span class="skill-meter" aria-hidden="true"><i></i></span></li>
+          <li class="skill-row"><span class="skill-number">02</span><h3>CSS</h3><span class="skill-level">Praticando</span><span class="skill-meter" aria-hidden="true"><i></i></span></li>
+          <li class="skill-row"><span class="skill-number">03</span><h3>JavaScript</h3><span class="skill-level">Iniciante</span><span class="skill-meter" aria-hidden="true"><i></i></span></li>
+          <li class="skill-row"><span class="skill-number">04</span><h3>Figma</h3><span class="skill-level">Iniciante</span><span class="skill-meter" aria-hidden="true"><i></i></span></li>
+        </ul>
+      </section>
 
+      <section class="section projects-section" id="projetos" aria-labelledby="titulo-projetos">
+        <div class="container">
+          <div class="section-heading">
+            <div><p class="eyebrow">03 / FEITO E EM CONSTRUÇÃO</p><h2 id="titulo-projetos">Pequenos passos,<br /><span>projetos reais.</span></h2></div>
+            <p class="section-intro">Uma seleção de exercícios e trabalhos do curso. Cada projeto me ensinou alguma coisa nova.</p>
+          </div>
+          <div class="filter-bar" role="group" aria-label="Filtrar projetos por tecnologia">
+            <span class="filter-label">MOSTRAR</span>
+            <button class="filter-button is-active" type="button" data-filter="todos" aria-pressed="true">Tudo</button>
+            <button class="filter-button" type="button" data-filter="Figma" aria-pressed="false">Figma</button>
+            <button class="filter-button" type="button" data-filter="HTML" aria-pressed="false">HTML</button>
+            <button class="filter-button" type="button" data-filter="CSS" aria-pressed="false">CSS</button>
+            <button class="filter-button" type="button" data-filter="JavaScript" aria-pressed="false">JavaScript</button>
+          </div>
+          <div class="project-grid" id="lista-projetos" aria-live="polite"></div>
+        </div>
+      </section>
 
+      <section class="contact-section" id="contato" aria-labelledby="titulo-contato">
+        <div class="container contact-grid">
+          <div class="contact-intro">
+            <p class="eyebrow">04 / VAMOS CONVERSAR</p>
+            <h2 id="titulo-contato">Uma boa ideia começa com um <span>olá.</span></h2>
+            <p>Deixe uma mensagem pelo formulário.</p>
+            <div class="social-links">
+              <a href="https://github.com/MariaCecilia07" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+          <form class="contact-form" id="form-contato" novalidate>
+            <div class="form-field"><label for="nome">Seu nome</label><input id="nome" name="nome" type="text" autocomplete="name" required minlength="2" aria-describedby="erro-nome" /><small class="field-error" id="erro-nome"></small></div>
+            <div class="form-field"><label for="email">Seu e-mail</label><input id="email" name="email" type="email" autocomplete="email" required aria-describedby="erro-email" /><small class="field-error" id="erro-email"></small></div>
+            <div class="form-field"><label for="mensagem">Sua mensagem</label><textarea id="mensagem" name="mensagem" rows="4" required minlength="10" aria-describedby="erro-mensagem"></textarea><small class="field-error" id="erro-mensagem"></small></div>
+            <div class="consent-field"><input id="consentimento" name="consentimento" type="checkbox" required aria-describedby="erro-consentimento" /><label for="consentimento">Entendo que os dados seriam usados apenas para responder a esta mensagem.</label></div>
+            <small class="field-error" id="erro-consentimento"></small>
+            <p class="privacy-note">Seus dados não saem desta página de demonstração.</p>
+            <button class="button button-dark" type="submit">Conferir mensagem <span aria-hidden="true">↗</span></button>
+            <p class="form-feedback" id="form-feedback" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
 
-
-
-
-
-
-
-
-
-
-
- </div>
-    
-
-    
-</body>
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <a class="brand" href="#inicio" aria-label="Voltar ao início">MC<span></span></a>
+        <p>© <span id="ano-atual"></span> Maria Cecília <span class="footer-note">· Construído com curiosidade.</span></p>
+        <a class="back-to-top" href="#topo">Voltar ao topo ↑</a>
+      </div>
+    </footer>
+  </body>
 </html>
